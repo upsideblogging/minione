@@ -23,6 +23,7 @@
   --text-color-lighten: hsl(var(--hue), 8%, 92%);
   --body-color: hsl(var(--hue), 100%, 99%);
   --container-color: #fff;
+  --button-color: #fff;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -96,10 +97,23 @@ img {
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
+  /*
+      Blue: hsl(207, 90%, 61%)
+      Purple: hsl(250, 66%, 75%)
+      Pink: hsl(356, 66%, 75%)
+      Teal: hsl(174, 63%, 62%)
+  */
+  --hue: 250;
+  --sat: 66%;
+  --lig: 75%;
+  --first-color: hsl(var(--hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--hue), var(--sat), 71%); /* -4% */
+
   --title-color: hsl(var(--hue), 12%, 95%);
   --text-color: hsl(var(--hue), 12%, 75%);
   --body-color: hsl(var(--hue), 40%, 8%);
   --container-color: hsl(var(--hue), 24%, 12%);
+  --button-color: #fff;
 }
 
 /*========== 
@@ -114,7 +128,7 @@ body.dark-theme {
   background-color: hsl(var(--hue), 24%, 16%);
 }
 
-.dark-theme .filters__content{
+.dark-theme .filters__content {
   background-color: var(--container-color);
 }
 
@@ -157,7 +171,7 @@ body.dark-theme {
   text-align: center;
 }
 
-.profile__perfil {
+.profile__fill {
   width: 180px;
   height: 180px;
   background: linear-gradient(
@@ -172,7 +186,7 @@ body.dark-theme {
   align-items: flex-end;
 }
 
-.profile__perfil img {
+.profile__fill img {
   width: 180px;
 }
 
@@ -433,6 +447,15 @@ body.dark-theme {
   color: var(--text-color-light);
 }
 
+.footer__copy a {
+  color: var(--text-color-light);
+  transition: 0.4s;
+}
+
+.footer__copy a:hover {
+  color: var(--first-color);
+}
+
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -501,12 +524,12 @@ body.dark-theme {
     margin-bottom: 1rem;
   }
 
-  .profile__perfil {
+  .profile__fill {
     width: 200px;
     height: 200px;
   }
 
-  .profile__perfil img {
+  .profile__fill img {
     width: 200px;
   }
 }
@@ -533,12 +556,12 @@ body.dark-theme {
     margin-bottom: 1rem;
   }
 
-  .profile__perfil {
+  .profile__fill {
     width: 220px;
     height: 220px;
   }
 
-  .profile__perfil img {
+  .profile__fill img {
     width: 220px;
   }
 
